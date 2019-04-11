@@ -1,0 +1,9 @@
+<launch>
+
+    <!--配置gmapping节点的参数  -->
+    <include file="$(find mbot_navigation)/launch/gmapping.launch"/>
+
+    <!--启动rviz进行gmapping同步定位与建图 -->
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find mbot_navigation)/rviz/slam.rviz"/>
+
+</launch>

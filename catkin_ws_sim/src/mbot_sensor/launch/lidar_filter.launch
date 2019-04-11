@@ -1,0 +1,10 @@
+<launch>
+    <!--雷达数据滤波处理节点 /-->
+    <node pkg="mbot_sensor" type="lidar_filter" name="lidar_filter" output="screen" />
+
+    <!--静态坐标变换处理节点，发布雷达消息TF数据 /-->
+    <node pkg="tf" type="static_transform_publisher" name="base_link_to_laser_filter" args="0 0 0 0 0 0  /base_link /laser_filter 100"/>
+
+    <!--<node pkg="rviz" type="rviz" name="rviz" args="-d $(find mbot_sensor)/rviz/lidar_filter.rviz" />-->
+
+</launch>
